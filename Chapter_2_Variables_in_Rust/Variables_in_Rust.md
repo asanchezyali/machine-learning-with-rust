@@ -44,3 +44,13 @@ Common types include:
 - `&str`: A string slice, which is a reference to a string
   
 ## Shadowing
+Rust allows you to declare a new variable with the same name as an existing one, this is called shadowing. The new variable "shadows" the old one:
+
+```rust
+let count = 10;
+let count = count + 1; // This shadows the previous count variable
+println!("Count: {}", count); // Output: Count: 11
+```
+
+> [!WARNING]
+> Shadowing can be useful for changing the type of a variable or modifying its value without using `mut`. However, be cautious with shadowing, as it can lead to confusion if not used carefully.
