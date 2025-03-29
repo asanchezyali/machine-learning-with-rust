@@ -3,7 +3,7 @@
 Welcome to this beginner-friendly guide on variables in Rust! In this document, we'll explore how Rust handles variables
 and what makes them special compared to other programming languages.
 
-## Declaring variables
+## 📌 Declaring variables
 In Rust, you can declare a variable using the `let` keyword. Here's a simple example:
 
 ```rust
@@ -14,7 +14,7 @@ By default, variables in Rust are immutable, meaning their values cannot be chan
 ```rust
 x = 10; // This will cause a compilation error
 ```
-## Mutability
+## 🔄 Mutability
 If you want to create a variable that can be changed, you must explicitly mark it as mutable using the `mut` keyword:
 
 ```rust
@@ -22,7 +22,7 @@ let mut y = 10;
 y = 20; // This is allowed because y is mutable
 ```
 
-## Variable types
+## 📦 Variable types
 Rust is a statically typed language, but it can infer types:
 ```rust
 let a = 5; // Rust infers that a is of type i32
@@ -45,7 +45,7 @@ Common types include:
 - `array`: A fixed-size array
 - `tuple`: A fixed-size collection of different types
   
-## Shadowing
+## 🎭 Shadowing
 Rust allows you to declare a new variable with the same name as an existing one, this is called shadowing. The new variable "shadows" the old one:
 
 ```rust
@@ -66,7 +66,7 @@ let text = text.len(); // text is now an integer!
 > [!CAUTION]
 > Shadowing allows you to reuse variable names and change their types, which can be useful in certain situations. However, it can also lead to confusion if not used carefully.
 
-## Constants
+## 🌟 Constants
 Constants are similar to immutable variables but with a few differences:
 - They are declared using the `const` keyword.
 - They must have a type annotation.
@@ -90,7 +90,7 @@ fn main() {
 }
 ```
 
-## Scope and blocks
+## 🧩 Scope and blocks
 Variables in Rust have block scope. A block is a collection of statements enclosed in curly braces `{}`. Variables declared inside a block are not accessible outside of it:
 
 ```rust
@@ -105,7 +105,7 @@ fn main() {
 }
 ```
 
-## Examples
+## 📝 Examples
 
 Here's a small program that demonstrates the concepts we've covered:
 
@@ -165,4 +165,45 @@ fn main() {
   let tuple: (i32, f64, char) = (42, 3.14, 'R');
   println!("Tuple variable: {:?}", tuple);
 }
+```
+
+## 🎲 Type inference best practices
+While Rust can infer types, it's often a good practice to be explicit in function signatures and when defining complex
+structures to make your coder more readable.
+
+## 🚫 The uninitialized variable trap
+Unlike some languages, Rust doesn't allow you declare a variable without initializing it:
+
+```rust
+let uninitialized_var; // This will cause a compilation error
+uninitialized_var = 10; // This line won't be reached
+
+// To fix this, initialize the variable when declaring it
+let initialized_var = 10; // This is valid
+```
+
+## 🎓 Advanced concept: the unit type
+In Rust, the unit type `()` is a special type that represents an empty value. It's often used in functions that don't return a meaningful value. For example:
+
+```rust
+fn do_nothing() -> () {
+    // This function does nothing and returns the unit type
+}
+fn main() {
+    let result = do_nothing();
+    println!("The result is: {:?}", result); // Output: The result is: ()
+}
+```
+This is similar to `void` in other languages, but in Rust, `()` is a first-class type that can be used in expressions
+and patterns.
+
+## 🚀 Ready for more?
+Now that you understand variables, you're ready to explore more complex Rust concept like:
+- Data Types
+- Functions
+- Control Flow
+- Ownership and Borrowing
+- Structs and Enums
+
+Happy coding!
 ```
